@@ -1,0 +1,38 @@
+
+#include <stdio.h>
+int main(void) {
+    int countman[3]={0,0,0},vote;
+    for (int i=0;i<10;i++) {
+        scanf("%d",&vote);
+        if (vote==1) {
+            countman[0]++;
+        }else if (vote==2) {
+            countman[1]++;
+        }else if (vote==3){
+            countman[2]++;
+        }
+
+    }
+    int max_countman=countman[0];
+    for (int i=0;i<3;i++) {
+        if (countman[i]>max_countman) {
+            max_countman=countman[i];
+        }
+    }
+    int a=0,b=0,winner;
+    for (b=0;b<3;b++)
+    {
+        if (countman[b]==max_countman) {
+            winner=b+1;
+            a++;
+
+        }
+    }
+    if (a>1) {
+        printf("We can not found the right winner");
+    }
+    else if (a=1) {
+        printf("The winner is %d",winner);
+    }
+}
+
